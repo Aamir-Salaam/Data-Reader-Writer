@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data_Reader_Writer", "Data_Reader_Writer\Data_Reader_Writer.csproj", "{8B715587-B2FC-4A17-909C-E1038A12C801}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6D20008F-1E7E-48D3-A682-F412105490CF}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "feed-products", "feed-products", "{9A19E428-0830-4DF5-9564-1C09FAA7F859}"
+	ProjectSection(SolutionItems) = preProject
+		Solution Items\feed-products\capterra.yaml = Solution Items\feed-products\capterra.yaml
+		Solution Items\feed-products\softwareadvice.json = Solution Items\feed-products\softwareadvice.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{25FB236B-8242-4F61-B468-73691CDB20DC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "Tests\UnitTests\UnitTests.csproj", "{35C3D872-69DB-4DAB-8EBA-0A60482B70BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8B715587-B2FC-4A17-909C-E1038A12C801}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B715587-B2FC-4A17-909C-E1038A12C801}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B715587-B2FC-4A17-909C-E1038A12C801}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B715587-B2FC-4A17-909C-E1038A12C801}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35C3D872-69DB-4DAB-8EBA-0A60482B70BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35C3D872-69DB-4DAB-8EBA-0A60482B70BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35C3D872-69DB-4DAB-8EBA-0A60482B70BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35C3D872-69DB-4DAB-8EBA-0A60482B70BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9A19E428-0830-4DF5-9564-1C09FAA7F859} = {6D20008F-1E7E-48D3-A682-F412105490CF}
+		{35C3D872-69DB-4DAB-8EBA-0A60482B70BC} = {25FB236B-8242-4F61-B468-73691CDB20DC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {539CB352-1F59-49D6-9619-D794015BA2D5}
+	EndGlobalSection
+EndGlobal
