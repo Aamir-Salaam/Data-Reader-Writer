@@ -17,7 +17,8 @@ Approach Used :-
 11. There is scope of improvement in the dependency resolution part which can be moved to different class as DependencyResolver. Lack of time didn't let do more such small optimizations.
 12. I have Implemented exception handling as and wherever needed.
 13. I have created path helper to resolve file path names.
-14. The output is as intended and mentioned in the requirements Readme file:
+14. I have achieved the feature of converting both types of data streams into the single database entity Product Information, to store the incoming information in singular consistent form in database.
+15. The output is as intended and mentioned in the requirements Readme file:
 
 E.g.=>
 
