@@ -21,16 +21,20 @@ Approach Used :-
 
 E.g.=>
 
-Input:-
+Output:- 
 
-Enter file name:
+Parsing files:
 
-capterra.yaml
-
-Output:-
+Import: D:\Data_Reader_Writer\Solution Items\feed-products\capterra.yaml
 
 importing: Name: 'GitGHub'; Categories: 'Bugs & Issue Tracking,Development Tools'; Twitter: '@github'
 
 importing: Name: 'Slack'; Categories: 'Instant Messaging & Chat,Web Collaboration,Productivity'; Twitter: '@slackhq'
 
 importing: Name: 'JIRA Software'; Categories: 'Project Management,Project Collaboration,Development Tools'; Twitter: '@jira'
+
+Import: D:\Data_Reader_Writer\Solution Items\feed-products\softwareadvice.json
+
+importing: Name: 'Freshdesk'; Categories: 'Customer Service,Call Center'; Twitter: '@freshdesk'
+
+importing: Name: 'Zoho'; Categories: 'CRM,Sales Management'; Twitter: ''
