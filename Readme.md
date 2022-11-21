@@ -1,7 +1,6 @@
 How to run:-
-1. Only enter the file name along with file extension to get the data.
-2. The files should be present in the "Solution Items\feed-products" of the solution.
-E.g.:- capterra.yaml
+1. Project created on .NET 6.0.
+2. The file names for the 2 provided files are being passed as command line agruements so you need to just simply run the application to get the output.
 
 Approach Used :-
 1. Implemented the repository pattern here in the solution. Made a generic repository as abstract repo to provide basic CRUD methods to all repositories that inherit it, all methods open to override for custom implementations.

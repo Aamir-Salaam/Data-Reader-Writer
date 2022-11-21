@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Data_Reader_Writer": {
+      "commandName": "Project",
+      "commandLineArgs": "capterra.yaml\r\nsoftwareadvice.json"
+    }
+  }
+}

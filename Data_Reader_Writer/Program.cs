@@ -22,60 +22,61 @@ namespace Data_Reader_Writer
             GenericMapper = new Mapper(new MapperConfiguration(cfg => { cfg.AddMaps("Data_Reader_Writer"); }));
         }
 
-        public static void Main()
+        public static void Main(string[] args)
         {
             var program = new Program();
-            program.Process();
+
+            program.Process(args);
         }
 
-        public void Process()
+        public void Process(string[] fileNames)
         {
-            Console.WriteLine("Enter file name: ");
-            var fileName = Console.ReadLine();
-            var filePath = PathHelper.GetPath(fileName);
-            var productInfoList = new List<ProductInfo>();
-
-            try
+            foreach (var fileName in fileNames)
             {
-                if (fileName.Contains("yaml"))
+                var filePath = PathHelper.GetPath(fileName);
+                var productInfoList = new List<ProductInfo>();
+
+                try
                 {
-                    var parser = new YamlParser(filePath);
-                    var yamlProductDataList = parser.ParseFromStream();
-
-                    foreach (var product in yamlProductDataList)
+                    if (fileName.Contains("yaml"))
                     {
-                        var productInfo = GenericMapper.Map<ProductInfo>(product);
+                        var parser = new YamlParser(filePath);
+                        var yamlProductDataList = parser.ParseFromStream();
 
-                        productInfoList.Add(productInfo);
+                        foreach (var product in yamlProductDataList)
+                        {
+                            var productInfo = GenericMapper.Map<ProductInfo>(product);
+
+                            productInfoList.Add(productInfo);
+                        }
+                    }
+                    else if (fileName.Contains("json"))
+                    {
+                        var parser = new JsonParser(filePath);
+                        var jsonProductDataList = parser.ParseFromStream();
+
+                        foreach (var product in jsonProductDataList)
+                        {
+                            var productInfo = GenericMapper.Map<ProductInfo>(product);
+
+                            productInfoList.Add(productInfo);
+                        }
+                    }
+
+                    var writer = new MySqlWriter();
+
+                    foreach (var entry in productInfoList)
+                    {
+                        writer.WriteToDb(entry, productInfoRepository);
                     }
                 }
-                else if (fileName.Contains("json"))
+                catch (Exception ex)
                 {
-                    var parser = new JsonParser(filePath);
-                    var jsonProductDataList = parser.ParseFromStream();
-
-                    foreach (var product in jsonProductDataList)
-                    {
-                        var productInfo = GenericMapper.Map<ProductInfo>(product);
-
-                        productInfoList.Add(productInfo);
-                    }
+                    Console.WriteLine(ex.Message);
                 }
-
-                var writer = new MySqlWriter();
-
-                foreach (var entry in productInfoList)
-                {
-                    writer.WriteToDb(entry, productInfoRepository);
-                }
-
-                Console.ReadLine();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
             }
 
+            Console.ReadLine();
         }
     }
 }
