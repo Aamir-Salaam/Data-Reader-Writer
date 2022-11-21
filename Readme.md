@@ -1,6 +1,7 @@
 How to run:-
 1. Project created on .NET 6.0.
-2. The file names for the 2 provided files are being passed as command line agruements so you need to just simply run the application to get the output.
+2. The file names for the 2 provided files are being passed as command line agruements so you need to just simply run the application in Debug(with debugging) or Release(without debugging) mode in Visual Studio 2022 to get the output results automatically.
+3. You can also run the application by publishing the app and running the .exe with command line arguements specifically passed.
 
 Approach Used :-
 1. Implemented the repository pattern here in the solution. Made a generic repository as abstract repo to provide basic CRUD methods to all repositories that inherit it, all methods open to override for custom implementations.
