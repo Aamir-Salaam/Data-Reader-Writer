@@ -18,11 +18,19 @@ Approach Used :-
 12. I have Implemented exception handling as and wherever needed.
 13. I have created path helper to resolve file path names.
 14. The output is as intended and mentioned in the requirements Readme file:
+
 E.g.=>
+
 Input:-
+
 Enter file name:
+
 capterra.yaml
+
 Output:-
+
 importing: Name: 'GitGHub'; Categories: 'Bugs & Issue Tracking,Development Tools'; Twitter: '@github'
+
 importing: Name: 'Slack'; Categories: 'Instant Messaging & Chat,Web Collaboration,Productivity'; Twitter: '@slackhq'
+
 importing: Name: 'JIRA Software'; Categories: 'Project Management,Project Collaboration,Development Tools'; Twitter: '@jira'
