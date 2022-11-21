@@ -31,6 +31,8 @@ namespace Data_Reader_Writer
 
         public void Process(string[] fileNames)
         {
+            Console.WriteLine("Parsing files:");
+
             foreach (var fileName in fileNames)
             {
                 var filePath = PathHelper.GetPath(fileName);
@@ -41,6 +43,9 @@ namespace Data_Reader_Writer
                     if (fileName.Contains("yaml"))
                     {
                         var parser = new YamlParser(filePath);
+
+                        Console.WriteLine($"\nImport: {filePath} \n");
+
                         var yamlProductDataList = parser.ParseFromStream();
 
                         foreach (var product in yamlProductDataList)
@@ -54,6 +59,8 @@ namespace Data_Reader_Writer
                     {
                         var parser = new JsonParser(filePath);
                         var jsonProductDataList = parser.ParseFromStream();
+
+                        Console.WriteLine($"\nImport: {filePath} \n");
 
                         foreach (var product in jsonProductDataList)
                         {
