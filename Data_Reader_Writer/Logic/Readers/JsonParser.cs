@@ -12,6 +12,9 @@ using YamlDotNet.Serialization.NamingConventions;
 
 namespace Data_Reader_Writer.Logic.Readers
 {
+    /// <summary>
+    /// Parser for JSON data
+    /// </summary>
     public class JsonParser : IJsonParser
     {
         public string Readpath { get; set; }
@@ -20,6 +23,8 @@ namespace Data_Reader_Writer.Logic.Readers
         {
             Readpath = readPath;
         }
+
+        ///<inheritdoc/>
         public List<JsonProduct> ParseFromStream()
         {
             using (StreamReader file = File.OpenText(Readpath))

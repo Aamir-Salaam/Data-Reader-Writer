@@ -22,6 +22,10 @@ namespace Data_Reader_Writer
             GenericMapper = new Mapper(new MapperConfiguration(cfg => { cfg.AddMaps("Data_Reader_Writer"); }));
         }
 
+        /// <summary>
+        /// Entry point for the application. Passing file names as command line args here
+        /// </summary>
+        /// <param name="args">File Names to be parsed</param>
         public static void Main(string[] args)
         {
             var program = new Program();
@@ -29,6 +33,10 @@ namespace Data_Reader_Writer
             program.Process(args);
         }
 
+        /// <summary>
+        /// Process the passed files
+        /// </summary>
+        /// <param name="fileNames"></param>
         public void Process(string[] fileNames)
         {
             Console.WriteLine("Parsing files:");
@@ -40,6 +48,7 @@ namespace Data_Reader_Writer
 
                 try
                 {
+                    // if file is "yaml" type file then use "YamlParser"
                     if (fileName.Contains("yaml"))
                     {
                         var parser = new YamlParser(filePath);
@@ -55,7 +64,7 @@ namespace Data_Reader_Writer
                             productInfoList.Add(productInfo);
                         }
                     }
-                    else if (fileName.Contains("json"))
+                    else if (fileName.Contains("json")) // if file is "json" type file then use "JsonParser"
                     {
                         var parser = new JsonParser(filePath);
                         var jsonProductDataList = parser.ParseFromStream();
@@ -70,6 +79,7 @@ namespace Data_Reader_Writer
                         }
                     }
 
+                    // write data to MySQL database as right now MongoDB database is not in picture
                     var writer = new MySqlWriter();
 
                     foreach (var entry in productInfoList)

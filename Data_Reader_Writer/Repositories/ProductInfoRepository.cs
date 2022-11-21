@@ -14,6 +14,12 @@ namespace Data_Reader_Writer.Repositories
 
         }
 
+        /// <summary>
+        /// Override of base FindById method to allow better exception handling
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public override ProductInfo FindById(int id)
         {
             var entity = base.FindById(id);
@@ -26,6 +32,11 @@ namespace Data_Reader_Writer.Repositories
             return entity;
         }
 
+        /// <summary>
+        /// Override of base Update method to modify update behaviour
+        /// </summary>
+        /// <param name="product"></param>
+        /// <returns></returns>
         public override bool Update(ProductInfo product)
         {
             var entry = DataList.SingleOrDefault(data => data.Id == product.Id);

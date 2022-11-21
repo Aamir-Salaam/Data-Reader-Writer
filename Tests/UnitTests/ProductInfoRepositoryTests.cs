@@ -6,6 +6,9 @@ using System.Text;
 
 namespace UnitTests
 {
+    /// <summary>
+    /// Tests for <see cref="ProductInfoRepository"/>
+    /// </summary>
     [TestFixture]
     public class ProductInfoRepositoryTests
     {

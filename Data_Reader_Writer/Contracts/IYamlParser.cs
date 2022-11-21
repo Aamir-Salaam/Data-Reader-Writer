@@ -9,6 +9,10 @@ namespace Data_Reader_Writer.Contracts
 {
     public interface IYamlParser
     {
+        /// <summary>
+        /// Parse Yaml stream data into list of <see cref="YamlProduct"/>
+        /// </summary>
+        /// <returns>list of <see cref="YamlProduct"/></returns>
         List<YamlProduct> ParseFromStream();
     }
 }

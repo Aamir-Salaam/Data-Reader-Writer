@@ -3,13 +3,20 @@ using Data_Reader_Writer.Models;
 
 namespace Data_Reader_Writer.Logic.Mappers
 {
-
+    /// <summary>
+    /// Define the configuration profile for the AutoMapper
+    /// </summary>
     public class AutoMapperProfileConfig : Profile
     {
         public AutoMapperProfileConfig()
             : this("DemoAppProfile")
         {
         }
+
+        /// <summary>
+        /// Create mappings for models in the application
+        /// </summary>
+        /// <param name="profileName"></param>
         protected AutoMapperProfileConfig(string profileName)
             : base(profileName)
         {

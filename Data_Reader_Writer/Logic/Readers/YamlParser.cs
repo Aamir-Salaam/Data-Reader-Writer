@@ -10,6 +10,9 @@ using YamlDotNet.Serialization.NamingConventions;
 
 namespace Data_Reader_Writer.Logic.Readers
 {
+    /// <summary>
+    /// Parser for Yaml data
+    /// </summary>
     public class YamlParser: IYamlParser
     {
         public string Readpath { get; set; }
@@ -18,6 +21,8 @@ namespace Data_Reader_Writer.Logic.Readers
         {
             Readpath = readPath;
         }
+
+        ///<inheritdoc/>
         public List<YamlProduct> ParseFromStream()
         {
             using (var reader = new StreamReader(Readpath))

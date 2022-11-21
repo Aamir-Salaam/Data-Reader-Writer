@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace Data_Reader_Writer.Logic.Writers
 {
+    /// <summary>
+    /// Db writer that writes to some MySQL database
+    /// </summary>
     public class MySqlWriter : IDbWriter
     {
         public void WriteToDb(ProductInfo productInfo, ProductInfoRepository productInfoRepository)

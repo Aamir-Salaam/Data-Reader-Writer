@@ -9,6 +9,10 @@ namespace Data_Reader_Writer.Contracts
 {
     public interface IJsonParser
     {
+        /// <summary>
+        /// Parse json stream data into list of <see cref="JsonProduct"/>
+        /// </summary>
+        /// <returns>list of <see cref="JsonProduct"/></returns>
         List<JsonProduct> ParseFromStream();
     }
 }

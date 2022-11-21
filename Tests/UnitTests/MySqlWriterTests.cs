@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace UnitTests
 {
+    /// <summary>
+    /// Tests for <see cref="MySqlWriter"/> logic
+    /// </summary>
     [TestFixture]
     public class MySqlWriterTests
     {

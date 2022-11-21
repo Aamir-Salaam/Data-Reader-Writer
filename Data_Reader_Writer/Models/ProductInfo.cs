@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Data_Reader_Writer.Models
 {
+    /// <summary>
+    /// Model representing the Product Information
+    /// </summary>
     public class ProductInfo: GenericEntity
     {
         public string Name { get; set; }
